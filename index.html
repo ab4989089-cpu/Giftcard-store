@@ -1,16 +1,261 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Gift Card Store</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GC Store - Premium Gift Cards</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: #f6f8fa;
+      color: #1a1a1a;
+      padding-bottom: 40px;
+    }
+
+    /* Navbar */
+    header {
+      background-color: #0d0d0d;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #e53e3e;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      background: #e53e3e;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 0.9rem;
+      border: 1px solid #ff6b6b;
+    }
+
+    .brand-title {
+      color: white;
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .icon-btn {
+      background: transparent;
+      border: 1px solid #333;
+      color: #e53e3e;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 20px 16px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #2b6cb0, #805ad5, #dd6b20);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Cards Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid #edf2f7;
+    }
+
+    .card-banner {
+      height: 110px;
+      width: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 12px;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #1a202c;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .card-subtitle {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #a0aec0;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .card-price {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #10b981;
+      margin-bottom: 10px;
+    }
+
+    /* Buttons */
+    .btn-add {
+      background-color: #10b981;
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-add:hover {
+      background-color: #059669;
+    }
+
+    .btn-sold {
+      background-color: #f7fafc;
+      color: #cbd5e0;
+      border: 1px solid #e2e8f0;
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: not-allowed;
+    }
+  </style>
 </head>
 <body>
-  <h1>🎁 Welcome to My Gift Card Store</h1>
-  <p>Buy Google Play, Steam, Xbox and PlayStation Gift Cards.</p>
 
-  <h2>Google Play ₹500</h2>
-  <button>Buy Now</button>
+  <!-- Header Section -->
+  <header>
+    <div class="brand">
+      <div class="brand-logo">GC</div>
+      <div class="brand-title">GC STORE</div>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+      </button>
+      <button class="icon-btn">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+  </header>
 
-  <h2>Steam ₹1000</h2>
-  <button>Buy Now</button>
+  <!-- Main Content -->
+  <div class="container">
+    <h2 class="section-title">Premium Gift Cards</h2>
+
+    <div class="grid">
+      
+      <!-- Card 1: Google Play -->
+      <div class="card">
+        <div>
+          <img class="card-banner" src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=400&auto=format&fit=crop&q=60" alt="Playstore">
+          <div class="card-content">
+            <div class="card-title">PLAYSTORE</div>
+            <div class="card-subtitle">BALANCE 10000 INR</div>
+            <div class="card-price">₹1,599.00</div>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Apple -->
+      <div class="card">
+        <div>
+          <img class="card-banner" src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=400&auto=format&fit=crop&q=60" alt="Apple">
+          <div class="card-content">
+            <div class="card-title">Apple</div>
+            <div class="card-subtitle">BALANCE 10000</div>
+            <div class="card-price">₹1,999.00</div>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Apple (Sold Out Example) -->
+      <div class="card">
+        <div>
+          <img class="card-banner" src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=400&auto=format&fit=crop&q=60" alt="Apple">
+          <div class="card-content">
+            <div class="card-title">Apple</div>
+            <div class="card-subtitle">BALANCE 5000</div>
+            <div class="card-price">₹999.00</div>
+            <button class="btn-sold" disabled>SOLD OUT</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Best Buy -->
+      <div class="card">
+        <div>
+          <img class="card-banner" src="https://images.unsplash.com/photo-1556742049-0a670f4a4591?w=400&auto=format&fit=crop&q=60" alt="Best Buy">
+          <div class="card-content">
+            <div class="card-title">BEST BUY</div>
+            <div class="card-subtitle">BALANCE 85 USD</div>
+            <div class="card-price">₹2,000.00</div>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </body>
 </html>
